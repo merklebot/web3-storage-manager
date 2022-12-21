@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "web3_storage_manager"
+version = "0.0.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.81.0"
+uvicorn = {extras = ["standard"], version = "^0.18.3"}
+SQLAlchemy = "^1.4.40"
+alembic = "^1.8.1"
+pydantic = "^1.10.1"
+python-dotenv = "^0.21.0"
+psycopg2-binary = "^2.9.3"
+substrate-interface = "^1.4.2"
+fastapi-utils = "^0.2.1"
+multiprocess = "^0.70.14"
+
+
+[tool.poetry.dev-dependencies]
+black = "^22.8.0"
+flake8 = "^5.0.4"
+isort = "^5.10.1"
+pylint = "^2.15.0"
+pre-commit = "^2.20.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-web3_storage_manager = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
