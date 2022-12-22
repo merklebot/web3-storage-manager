@@ -1,4 +1,20 @@
 version: "3.8"
 
 services:
-  web3_storage_manager: {}
+  web3_storage_manager:
+    build: .
+    env_file: .env
+    ports:
+      - 8000:8000
+    volumes:
+      - ./web3_storage_manager/:/web3_storage_manager/web3_storage_manager/
+
+  postgres:
+    image: postgres:15
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_SERVER
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
