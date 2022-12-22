@@ -1,17 +1,9 @@
-from sqlalchemy import (
-    TIMESTAMP,
-    BigInteger,
-    Boolean,
-    Column,
-    ForeignKey,
-    Integer,
-    String,
-    func,
-)
-from sqlalchemy.orm import backref, relationship
+from sqlalchemy import TIMESTAMP, Column, ForeignKey, Integer, String, func
+from sqlalchemy.orm import relationship
 
 from web3_storage_manager.db.base_class import Base
-from web3_storage_manager.db.models.crust_order import CrustOrder
+from web3_storage_manager.db.models.crust_order import CrustOrder  # noqa
+
 
 class Content(Base):
     __tablename__ = "content"
@@ -23,7 +15,6 @@ class Content(Base):
     owner = relationship("User", back_populates="content")
     owner_id = Column(Integer, ForeignKey("users.id"))
     crust_orders = relationship("CrustOrder", back_populates="content")
-
 
     status = Column(String, index=True, nullable=True)
 

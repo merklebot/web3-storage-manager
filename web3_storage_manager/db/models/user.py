@@ -2,7 +2,8 @@ from sqlalchemy import TIMESTAMP, Column, Integer, String, func
 from sqlalchemy.orm import relationship
 
 from web3_storage_manager.db.base_class import Base
-from web3_storage_manager.db.models.content import Content
+from web3_storage_manager.db.models.content import Content  # noqa
+
 
 class User(Base):
     __tablename__ = "users"

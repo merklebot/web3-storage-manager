@@ -1,16 +1,8 @@
-from sqlalchemy import (
-    TIMESTAMP,
-    BigInteger,
-    Boolean,
-    Column,
-    ForeignKey,
-    Integer,
-    String,
-    func,
-)
-from sqlalchemy.orm import backref, relationship
+from sqlalchemy import TIMESTAMP, Column, ForeignKey, Integer, String, func
+from sqlalchemy.orm import relationship
 
 from web3_storage_manager.db.base_class import Base
+
 
 class CrustOrder(Base):
     __tablename__ = "crust_orders"
