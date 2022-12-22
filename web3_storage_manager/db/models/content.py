@@ -1,4 +1,4 @@
-from sqlalchemy import TIMESTAMP, Column, ForeignKey, Integer, String, func
+from sqlalchemy import TIMESTAMP, Column, Integer, String, func
 from sqlalchemy.orm import relationship
 
 from web3_storage_manager.db.base_class import Base
@@ -12,8 +12,6 @@ class Content(Base):
     cid = Column(String)
     filesize = Column(Integer)
 
-    owner = relationship("User", back_populates="content")
-    owner_id = Column(Integer, ForeignKey("users.id"))
     crust_orders = relationship("CrustOrder", back_populates="content")
 
     status = Column(String, index=True, nullable=True)
