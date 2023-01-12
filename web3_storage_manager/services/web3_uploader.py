@@ -38,9 +38,4 @@ class Web3Uploader:
                     db.add(crust_order)
                     db.commit()
 
-            crust_orders_without_status = (
-                db.query(CrustOrder).filter(CrustOrder.status == "created").all()
-            )
-            for crust_order in crust_orders_without_status:
-                pass
-            time.sleep(120)
+            time.sleep(10)
